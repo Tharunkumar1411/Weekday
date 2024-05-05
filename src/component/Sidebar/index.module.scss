@@ -1,0 +1,21 @@
+.drawerHeader {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px; /* Assuming you meant pixels */
+}
+
+.drawerButton {
+    border: solid 1px grey;
+    margin-top: 10px; /* Assuming you meant pixels */
+    position: relative;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.searchText {
+    font-size: x-small;
+    text-align: center;
+    font-family: sans-serif
+}
