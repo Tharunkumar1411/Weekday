@@ -21,6 +21,8 @@ import styles from "./index.module.scss"
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import WavingHandIcon from '@mui/icons-material/WavingHand';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
 const drawerWidth = 190;
 
@@ -153,6 +155,12 @@ export default function Sidebar() {
           ))}
         </List>
       </Drawer>
+
+      <Suspense>
+          <Box>
+              <Outlet />
+          </Box>
+      </Suspense>
     </Box>
   );
 }

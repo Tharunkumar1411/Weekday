@@ -10,11 +10,7 @@ const Layout = () => {
                 <Sidebar />
             </div>
 
-            <Suspense>
-                <Box>
-                    <Outlet />
-                </Box>
-            </Suspense>
+         
         </Box>
     )
 }
