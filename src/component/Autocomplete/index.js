@@ -1,24 +1,12 @@
 import { Autocomplete, TextField } from "@mui/material";
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobs, setFilter } from "../../store/actions/searchActions";
 
 const AutoComplete = (props) => {
     const dispatch = useDispatch()
     const jdList = useSelector(state => state.search.searchJobs.searchJobs);
-    const searchFilters = useSelector(state => state.search.searchJobs.searchFilter);
-
-    const [searchFilter, setSearchFilter] = useState({
-        
-        jobRole : [],
-        experience: [],
-        location: [],
-        salary: [],
-    })
 
     const handleOnChange = (event, newValue) => {
-        console.log("cehck value::", newValue);
-
         if(newValue.length === 0){
             dispatch(fetchJobs());
             return;
@@ -44,7 +32,6 @@ const AutoComplete = (props) => {
                 t.jdUid === obj.jdUid
             ))
         );
-        console.log('finalFiltersupdatedJobRoles',updatedJobRoles, filter)
         dispatch(setFilter(finalFilters))
     };
     

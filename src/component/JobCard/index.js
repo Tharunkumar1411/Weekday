@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import React, { useEffect, useRef } from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,15 +12,6 @@ import { fetchJobs } from '../../store/actions/searchActions';
 import CircularProgress from '@mui/material/CircularProgress';
 import styles from "./index.module.scss";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
 export default function JobCard() {
   const dispatch = useDispatch();
   const jdList = useSelector(state => state.search.searchJobs.searchJobs);
@@ -28,9 +20,7 @@ export default function JobCard() {
   const loading = useSelector(state => state.search.loading);
   const countRef = useRef(1)
 
-  console.log("searchFiltersearchFilter",searchFilter)
   const handleScroll = () => {
-    const len = searchFilter.length
     if (
       window.innerHeight + document.documentElement.scrollTop + 1 >
       document.documentElement.offsetHeight && searchFilter.length === 0
@@ -49,9 +39,6 @@ export default function JobCard() {
   }, []);
 
   const CompanyDescription = ({ description }) => {
-    const toggleDescription = () => {
-      alert("hi")
-    };
 
     return (
       <div style={{ position: 'relative' }}>
@@ -63,7 +50,6 @@ export default function JobCard() {
         </Typography>
         {description.length > 500 && (
           <Button
-            onClick={toggleDescription}
             style={{
               position: 'absolute',
               left: '50%',
@@ -109,7 +95,7 @@ export default function JobCard() {
               </Typography>
 
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start' }}>
-                  <img src={item.logoUrl} alt="Company Logo" style={{ width: '30px', height: '30px', marginRight: '10px', alignSelf: 'center' }} />
+                  <img src={item.logoUrl} alt="Company Logo" className={styles.logoImg} />
                   <div>
                       <h4 style={{ margin: 0, color:'#8b8b8b' }}>{item.companyName}</h4>
                       <h5 style={{ margin: 0 }}>{item.jobRole}</h5>  
@@ -130,14 +116,14 @@ export default function JobCard() {
                 <Typography>{item.minExp ?? 0} years</Typography>
               </div>
 
-              <CardActions style={{backgroundColor: '#54efc3', justifyContent:'center', borderRadius: '10px', marginTop: '5px',cursor: 'pointer'}}>
+              <CardActions className={styles.applyBtn}>
                 <Typography>⚡ Easy Apply</Typography>
               </CardActions>
 
-              <CardActions style={{ backgroundColor: '#4943da', justifyContent: 'center', borderRadius: '10px', marginTop: '5px', cursor: 'pointer'}}>
+              <CardActions className={styles.referralBtn}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src="https://media.licdn.com/dms/image/C4E03AQF4heSC0llsVQ/profile-displayphoto-shrink_400_400/0/1643551282913?e=1718841600&v=beta&t=0Mrzt_KLjFEo8Vs5jLeXENBtQdyE0N7jlb7CT5gQDqY" alt="Your Image" style={{ width: '20px', height: '20px', marginRight: '5px', filter: 'blur(1px)', borderRadius: 10 }} />
-                  <img src="https://media.licdn.com/dms/image/D4D03AQGsnnp5ILUfcg/profile-displayphoto-shrink_800_800/0/1699863812498?e=1715212800&v=beta&t=N7vgqonNZXRi3NW9qhAV3CNU8Aa8h3HS5jXtKDtFYvE" alt="Your Image" style={{ width: '20px', height: '20px', marginRight: '5px', filter: 'blur(1px)', borderRadius: 10 }} />
+                  <img src="https://media.licdn.com/dms/image/C4E03AQF4heSC0llsVQ/profile-displayphoto-shrink_400_400/0/1643551282913?e=1718841600&v=beta&t=0Mrzt_KLjFEo8Vs5jLeXENBtQdyE0N7jlb7CT5gQDqY" alt="Your Image" className={styles.imgStyle} />
+                  <img src="https://media.licdn.com/dms/image/D4D03AQGsnnp5ILUfcg/profile-displayphoto-shrink_800_800/0/1699863812498?e=1715212800&v=beta&t=N7vgqonNZXRi3NW9qhAV3CNU8Aa8h3HS5jXtKDtFYvE" alt="Your Image" className={styles.imgStyle} />
 
                   <Typography style={{color: "#fff"}}> Unlock Referral asks</Typography>
                 </div>

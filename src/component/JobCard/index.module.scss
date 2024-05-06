@@ -3,3 +3,36 @@
     flex-direction: row;
     align-items: center;
 }
+
+.imgStyle {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    filter: blur(1px);
+    border-radius: 10px;
+}
+
+.applyBtn {
+    background-color: #54efc3;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.referralBtn {
+    background-color: #4943da;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.logoImg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    align-self: center;
+}
+
+
