@@ -9,8 +9,6 @@ const Layout = () => {
             <div>
                 <Sidebar />
             </div>
-
-         
         </Box>
     )
 }

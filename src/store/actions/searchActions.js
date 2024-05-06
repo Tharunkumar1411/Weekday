@@ -1,13 +1,12 @@
-import { getSearchJobs } from "../types/searchTypes";
+import { getSearchJobs, setSearchFilter, updateSearchJobs } from "../types/searchTypes";
 
-export function fetchJobs() {
-
+export function fetchJobs(limit = 10, offset = 0) {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     const body = JSON.stringify({
-        "limit": 10,
-        "offset": 0
+        "limit": limit,
+        "offset": offset
     });
        
     const requestOptions = {
@@ -22,8 +21,11 @@ export function fetchJobs() {
         .then((data) => {            
             try {
                 const parsedData = JSON.parse(data);
-                console.log("chekcing data::", parsedData)
-                dispatch(getSearchJobs(parsedData));
+                if(offset === 0){
+                    dispatch(getSearchJobs(parsedData));
+                }else{
+                    dispatch(updateSearchJobs(parsedData))
+                }
             } catch (error) {
                 console.error('Error parsing JSON:', error);
             }
@@ -33,3 +35,10 @@ export function fetchJobs() {
         });
     }
 }
+
+export function setFilter(data) {
+    return (dispatch) => {
+        dispatch(setSearchFilter(data))
+    }
+}
+

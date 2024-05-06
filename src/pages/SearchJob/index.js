@@ -4,34 +4,21 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobs } from "../../store/actions/searchActions";
 import { CircularProgress } from "@mui/material";
+import JobCard from "../../component/JobCard";
 
 const SearchJob = () => {
     const dispatch = useDispatch();
     const jdList = useSelector(state => state.search.searchJobs);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+    const [loadMore, setLoadMore] = useState(false)
     const [page, setPage] = useState(1); 
 
     useEffect(() => {
         dispatch(fetchJobs());
-
-        const handleScroll = () => {
-            if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
-            setPage(prevPage => prevPage + 1); 
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     useEffect(() => {
-        if (page > 1) { 
-            setIsLoading(true); 
-            dispatch(fetchJobs(page));
-        }
-    }, [page]);
-
-    useEffect(() => {
-        if (jdList.length > 0) setIsLoading(false);
+        if (jdList.length > 0) setLoadMore(false);
     }, [jdList]);
 
     return(
@@ -45,8 +32,11 @@ const SearchJob = () => {
                 <AutoComplete options={BasePay} isGroupBy={false} placeHolder='Minimum base pay salary' width={260} size='small'/>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
-                {isLoading ? <CircularProgress /> : <></>}
+            <div style={{margin: 20, display: 'flex', justifyContent: 'flex-start', alignItems: 'center', marginTop: 20 }}>
+                {isLoading ? <CircularProgress /> : 
+                <div>
+                    <JobCard />
+                </div>}
             </div>
         </div>
     );

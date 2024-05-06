@@ -1,51 +1,40 @@
 
 export const Roles = [
-    { title: 'Backend', category: 'Engineering' },
-    { title: 'Frontend', category: 'Engineering' },
-    { title: 'Fullstack', category: 'Engineering' },
-    { title: 'IOS', category: 'Engineering' },
-    { title: 'Flutter', category: 'Engineering' },
-    { title: 'React Native', category: 'Engineering' },
-    { title: 'Android', category: 'Engineering' },
-    { title: 'Tech Lead', category: 'Engineering' },
-    { title: 'Dev Ops', category: 'Engineering' },
-    { title: 'Data Engineer', category: 'Engineering' },
-    { title: 'Data Svience', category: 'Engineering' },
-    { title: 'Computer Vision', category: 'Engineering' },
-    { title: 'Nlp', category: 'Engineering' },
-    { title: 'Deep Learning', category: 'Engineering' },
-
-    { title: 'Designer', category: 'DESIGN' },
-    { title: 'Design Manager', category: 'DESIGN' },
-    { title: 'Graphic Designer', category: 'DESIGN' },
-    { title: 'Product Designer', category: 'DESIGN' },
-
-
-    { title: 'Product Manager', category: 'PRODUCT' },
-
-
-    { title: 'Operations Manager', category: 'OPERATIONS' },
-    { title: 'Founders Office/chief Of  Staff', category: 'OPERATIONS' },
-
-    
-    { title: 'Sales Development Executive', category: 'SALES' },
-    { title: 'Account Executive', category: 'SALES' },
-    { title: 'Account Manager', category: 'SALES' },
-
-    { title: 'Digital Marketing Manager', category: 'MARKETING' },
-    { title: 'Marketing', category: 'MARKETING' },
-    { title: 'Product Marketing Manager', category: 'MARKETING' },
-
-    { title: 'Hardware', category: 'OTHER ENGINEERING' },
-    { title: 'Mechanical', category: 'OTHER ENGINEERING' },
-    { title: 'Systems', category: 'OTHER ENGINEERING' },
-
-
-    { title: 'Bussiness Analyst', category: 'BUSSINESS ANALYST' },
-    { title: 'Project Manager', category: 'PROJECT MANAGER' },
-    { title: 'Legal', category: 'LEGAL' },
-    { title: 'Hr', category: 'HR' },
-    { title: 'Finance', category: 'FINANCE' },
+    { title: 'Backend', category: 'Engineering', tag: 'jobRole' },
+    { title: 'Frontend', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Fullstack', category: 'Engineering',tag: 'jobRole' },
+    { title: 'IOS', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Flutter', category: 'Engineering',tag: 'jobRole' },
+    { title: 'React Native', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Android', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Tech Lead', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Dev Ops', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Data Engineer', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Data Svience', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Computer Vision', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Nlp', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Deep Learning', category: 'Engineering',tag: 'jobRole' },
+    { title: 'Designer', category: 'DESIGN',tag: 'jobRole' },
+    { title: 'Design Manager', category: 'DESIGN',tag: 'jobRole' },
+    { title: 'Graphic Designer', category: 'DESIGN',tag: 'jobRole' },
+    { title: 'Product Designer', category: 'DESIGN',tag: 'jobRole' },
+    { title: 'Product Manager', category: 'PRODUCT',tag: 'jobRole' },
+    { title: 'Operations Manager', category: 'OPERATIONS' ,tag: 'jobRole'},
+    { title: 'Founders Office/chief Of  Staff', category: 'OPERATIONS',tag: 'jobRole' },
+    { title: 'Sales Development Executive', category: 'SALES',tag: 'jobRole' },
+    { title: 'Account Executive', category: 'SALES', tag: 'jobRole'},
+    { title: 'Account Manager', category: 'SALES',tag: 'jobRole' },
+    { title: 'Digital Marketing Manager', category: 'MARKETING',tag: 'jobRole' },
+    { title: 'Marketing', category: 'MARKETING',tag: 'jobRole' },
+    { title: 'Product Marketing Manager', category: 'MARKETING',tag: 'jobRole' },
+    { title: 'Hardware', category: 'OTHER ENGINEERING',tag: 'jobRole' },
+    { title: 'Mechanical', category: 'OTHER ENGINEERING',tag: 'jobRole' },
+    { title: 'Systems', category: 'OTHER ENGINEERING',tag: 'jobRole' },
+    { title: 'Bussiness Analyst', category: 'BUSSINESS ANALYST',tag: 'jobRole' },
+    { title: 'Project Manager', category: 'PROJECT MANAGER',tag: 'jobRole' },
+    { title: 'Legal', category: 'LEGAL',tag: 'jobRole' },
+    { title: 'Hr', category: 'HR' ,tag: 'jobRole'},
+    { title: 'Finance', category: 'FINANCE',tag: 'jobRole' },
 ]
 
 export const RoleCategories = [
@@ -64,7 +53,7 @@ export const RoleCategories = [
 ]
 
 export const NoOfEmployees = [
-    { title: '1-10', value: '1-10' },
+    { title: '1-10', value: '1-10', },
     { title: '11-20', value: '11-20' },
     { title: '21-50', value: '21-50' },
     { title: '51-100', value: '51-100' },
@@ -74,22 +63,22 @@ export const NoOfEmployees = [
 ];
 
 export const Experience = [
-    {title: '1', valuie: 1},
-    {title: '2', valuie: 2},
-    {title: '3', valuie: 3},
-    {title: '4', valuie: 4},
-    {title: '5', valuie: 5},
-    {title: '6', valuie: 6},
-    {title: '7', valuie: 7},
-    {title: '8', valuie: 8},
-    {title: '9', valuie: 9},
-    {title: '10', valuie: 10},
+    {title: '1', value: 1, tag: 'minExp'},
+    {title: '2', value: 2, tag: 'minExp'},
+    {title: '3', value: 3, tag: 'minExp'},
+    {title: '4', value: 4, tag: 'minExp'},
+    {title: '5', value: 5, tag: 'minExp'},
+    {title: '6', value: 6, tag: 'minExp'},
+    {title: '7', value: 7, tag: 'minExp'},
+    {title: '8', value: 8, tag: 'minExp'},
+    {title: '9', value: 9, tag: 'minExp'},
+    {title: '10', value: 10, tag: 'minExp'},
 ]
 
 export const RemoteOptions = [
-    { title: 'Remote', value: 'Remote' },
-    { title: 'HyBrid', value: 'HyBrid' },
-    { title: 'In-Office', value: 'In-Office' },
+    { title: 'Remote', value: 'Remote', tag: 'location' },
+    { title: 'HyBrid', value: 'HyBrid',tag: 'location' },
+    { title: 'In-Office', value: 'In-Office',tag: 'location' },
 ];
 
 export const TechStack = [
@@ -112,12 +101,12 @@ export const TechStack = [
 ];
 
 export const BasePay = [
-    { title: '0L', value: '0' },
-    { title: '10L', value: '10' },
-    { title: '20L', value: '20' },
-    { title: '30L', value: '30' },
-    { title: '40L', value: '40' },
-    { title: '50L', value: '50' },
-    { title: '60L', value: '60' },
-    { title: '70L', value: '70' }
+    { title: '0', value: '0',tag: 'minJdSalary' },
+    { title: '10L', value: 10,tag: 'minJdSalary' },
+    { title: '20L', value: 20,tag: 'minJdSalary' },
+    { title: '30L', value: 30,tag: 'minJdSalary' },
+    { title: '40L', value: 40,tag: 'minJdSalary' },
+    { title: '50L', value: 50,tag: 'minJdSalary' },
+    { title: '60L', value: 60,tag: 'minJdSalary' },
+    { title: '70L', value: 70,tag: 'minJdSalary' }
 ];
